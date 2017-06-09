@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
@@ -6,15 +6,8 @@ import { Animal } from './animal.model';
   template: `<div class="container">
     <h1>Zoo Keeper App</h1>
 
-    <animal-list [childAnimalList]="masterAnimalList"></animal-list>
-
-    <div *ngIf="selectedAnimal">
-    <h3>{{selectedAnimal.species}}</h3>
-    <h3>Edit Animal</h3>
-      <label>Enter info:</label>
-      <input [(ngModel)]="selectedAnimal.species">
-      <button (click)="finishedEditing()">Done</button>
-  </div>
+    <animal-list [childAnimalList]="masterAnimalList" (clickSenderEdit)="editAnimal($event)"></animal-list>
+    <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButton)="finishedEditing()"></edit-animal>
 
   `
 })
