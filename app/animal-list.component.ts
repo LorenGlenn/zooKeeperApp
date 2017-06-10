@@ -4,12 +4,15 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'animal-list',
   template: `
-  <select  (change)="onChange($event.target.value)">
+
+
+  <select (change)="onChangeSpecies($event.target.value)">
   <option value="allSpecies">All Species</option>
   <option *ngFor="let currentAnimal of childAnimalList" value="{{currentAnimal.species}}">{{currentAnimal.species}}</option>
-</select>
+  </select>
+
   <ul *ngFor="let currentAnimal of childAnimalList | species:filterBySpecies">
-  <li> {{currentAnimal.species}}</li>
+  <li>Species of Animal: {{currentAnimal.species}}</li>
   <li>{{currentAnimal.name}}</li>
   <li>{{currentAnimal.age}}</li>
   <li>{{currentAnimal.diet}}</li>
@@ -26,12 +29,13 @@ import { Animal } from './animal.model';
 export class AnimalListComponent {
   @Input() childAnimalList: Animal[];
   @Output() clickSenderEdit= new EventEmitter();
+
   filterBySpecies: string = "allSpecies";
   speciesPipe = null;
 
-  onChange(optionFromMenu) {
+  onChangeSpecies(optionFromMenu) {
     this.filterBySpecies = optionFromMenu;
-    
+
   }
 
 
