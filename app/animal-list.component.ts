@@ -5,7 +5,9 @@ import { Animal } from './animal.model';
   selector: 'animal-list',
   template: `
   <ul *ngFor="let currentAnimal of childAnimalList">
-  <li> {{currentAnimal.species}}<button (click)="editAnimalButtonHasBeenClicked(currentAnimal)">Edit!</button></li>
+  <li> {{currentAnimal.species}}<br> {{currentAnimal.name}}<br>{{currentAnimal.age}}<br> {{currentAnimal.diet}}<br>{{currentAnimal.location}}<br> {{currentAnimal.caretakers}} <br>{{currentAnimal.sex}} <br> {{currentAnimal.likes}}<br>{{currentAnimal.dislikes}}</li>
+
+  <button (click)="editAnimalButtonHasBeenClicked(currentAnimal)">Edit!</button>
   </ul>`
 })
 
