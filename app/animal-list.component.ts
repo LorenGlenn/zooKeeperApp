@@ -18,32 +18,37 @@ import { Animal } from './animal.model';
 
   <div *ngIf="agePipe">
   <ul *ngFor="let currentAnimal of childAnimalList | age:filterByAge">
-  <li>Species of Animal: {{currentAnimal.species}}</li>
-  <li>{{currentAnimal.name}}</li>
-  <li>{{currentAnimal.age}}</li>
-  <li>{{currentAnimal.diet}}</li>
-  <li>{{currentAnimal.location}}</li>
-  <li>{{currentAnimal.caretakers}}</li>
-  <li>{{currentAnimal.sex}}</li>
-  <li>{{currentAnimal.likes}}</li>
-  <li>{{currentAnimal.dislikes}}</li>
+  <div class="panel-body">
+  <li><strong>Species of Animal:</strong> {{currentAnimal.species}}</li>
+  <li><strong>Name of Animal: </strong> {{currentAnimal.name}}</li>
+  <li><strong>The age:</strong> {{currentAnimal.age}}</li>
+  <li><strong> Are they a Carnivore or Herbivore?:</strong> {{currentAnimal.diet}}</li>
+  <li><strong>Where do they live?:</strong> {{currentAnimal.location}}</li>
+  <li><strong>Who are their caretakers?:</strong> {{currentAnimal.caretakers}}</li>
+  <li><strong>Sex of the animal:</strong> {{currentAnimal.sex}}</li>
+  <li><strong>Likes:</strong> {{currentAnimal.likes}}</li>
+  <li><strong>Dislikes:</strong> {{currentAnimal.dislikes}}</li>
 
   <button (click)="editAnimalButtonHasBeenClicked(currentAnimal)">Edit!</button>
+  </div>
   </ul>
   </div>
+
   <div *ngIf="speciesPipe">
   <ul *ngFor="let currentAnimal of childAnimalList | species:filterBySpecies">
-  <li>Species of Animal: {{currentAnimal.species}}</li>
-  <li>{{currentAnimal.name}}</li>
-  <li>{{currentAnimal.age}}</li>
-  <li>{{currentAnimal.diet}}</li>
-  <li>{{currentAnimal.location}}</li>
-  <li>{{currentAnimal.caretakers}}</li>
-  <li>{{currentAnimal.sex}}</li>
-  <li>{{currentAnimal.likes}}</li>
-  <li>{{currentAnimal.dislikes}}</li>
+  <div class="bg-success"class="panel-body">
+  <li><strong>Species of Animal:</strong>    {{currentAnimal.species}}</li>
+  <li><strong>Name of Animal:</strong> {{currentAnimal.name}}</li>
+  <li><strong>The age:</strong> {{currentAnimal.age}}</li>
+  <li><strong> Are they a Carnivore or Herbivore?:</strong> {{currentAnimal.diet}}</li>
+  <li><strong>Where do they live?:</strong> {{currentAnimal.location}}</li>
+  <li><strong>Who are their caretakers?:</strong> {{currentAnimal.caretakers}}</li>
+  <li><strong>Sex of the animal:</strong> {{currentAnimal.sex}}</li>
+  <li><strong>Likes:</strong> {{currentAnimal.likes}}</li>
+  <li><strong>Dislikes:</strong> {{currentAnimal.dislikes}}</li>
 
   <button (click)="editAnimalButtonHasBeenClicked(currentAnimal)">Edit!</button>
+  </div>
   </ul>
   </div>`
 })
