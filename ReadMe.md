@@ -21,7 +21,9 @@ Zoo Animal App is a web application for adding new animals, editing existing ani
 ## Known Bugs
 
 N/A
-
+## Future Goals
+* implement artificial intelligence
+* implement styling
 ## Support and Contact Information
 
 Contact Peter Karellas
